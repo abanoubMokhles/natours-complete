@@ -1,0 +1,11 @@
+{
+  "name": "natours",
+  "version": "1.0.0",
+  "description": "a tour booking site",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Abanoub Mokhles",
+  "license": "ISC"
+}
