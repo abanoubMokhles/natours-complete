@@ -1,0 +1,29 @@
+/*-=========== Header ===========-*/
+.header {
+  height: 95vh;
+  position: relative;
+  background: linear-gradient(
+      to bottom right,
+      rgba($color-primary, 0.8),
+      rgba($color-primary, 0.8)
+    ),
+    url(../img/hero.jpg) center center/cover;
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+
+  &__logo-box {
+    position: absolute;
+    top: 2.4rem;
+    left: 2.4rem;
+  }
+  &__logo {
+    height: 3.6rem;
+  }
+  &__intro-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: $color-light;
+    text-align: center;
+  }
+}
