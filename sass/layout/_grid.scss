@@ -1,8 +1,12 @@
 /*-=========== Grid System ===========-*/
 .row {
-  max-width: 112rem;
+  max-width: 114rem;
   margin: 0 auto;
   @include clearfix;
+
+  @include respond(tablet-landscape) {
+    padding: 0 2.4rem;
+  }
 
   &:not(:last-child) {
     margin-bottom: $grid-v-gutter;
@@ -11,8 +15,25 @@
   [class^="col-"] {
     float: left;
 
+    @include respond(tablet-portrait) {
+      width: 50%;
+      float: none;
+
+      // for the last element
+      margin: 0 auto;
+    }
+    @include respond(phone) {
+      width: 75%;
+    }
+
     &:not(:last-child) {
       margin-right: $grid-h-gutter;
+      margin-bottom: $grid-v-gutter;
+
+      @include respond(tablet-portrait) {
+        // for the above elements to have vertical margin
+        margin: 4rem auto;
+      }
     }
   }
 }

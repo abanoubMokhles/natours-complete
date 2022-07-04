@@ -17,6 +17,10 @@
 }
 .composition {
   position: relative;
+
+  @include respond(tablet-portrait) {
+    position: static;
+  }
   &__image {
     position: absolute;
     display: block;
@@ -25,9 +29,16 @@
     box-shadow: 0 1rem 3rem rgba($color-black, 0.3);
     transition: all 0.5s ease-out;
 
+    @include respond(tablet-portrait) {
+      position: static;
+      display: inline-block;
+      width: 33%;
+    }
+
     &:hover {
       z-index: 100;
       transform: translateY(-1rem) scale(1.1);
+      box-shadow: 0 1rem 3rem rgba($color-black, 0.4);
     }
 
     &--1 {

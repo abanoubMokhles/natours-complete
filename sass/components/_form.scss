@@ -1,0 +1,93 @@
+.form {
+  width: 50%;
+
+  @include respond(tablet-landscape) {
+    width: 75%;
+  }
+  @include respond(phone) {
+    width: 100%;
+  }
+  &__group {
+    margin-bottom: 2.4rem;
+    font-size: 1.6rem;
+  }
+  &__input {
+    background-color: rgba($color-light, 0.8);
+    border-radius: 3px;
+    padding: 1.5rem 2rem;
+    display: block;
+    width: 75%;
+    border: none;
+    font-size: inherit;
+    font-family: inherit;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s;
+
+    @include respond(tablet-portrait) {
+      width: 100%;
+    }
+
+    &:focus:invalid {
+      border-bottom: 3px solid $color-secondary-dark;
+    }
+    &:focus {
+      outline: none;
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
+      border-bottom: 3px solid $color-primary;
+    }
+  }
+  &__input:placeholder-shown + &__label {
+    opacity: 0;
+    transform: translateY(-3rem);
+  }
+  &__label {
+    display: block;
+    margin: 1rem 2rem 0;
+    transition: all 0.3s;
+  }
+  &__radio-group {
+    width: 48%;
+    display: inline-block;
+    font-size: 2rem;
+
+    @include respond(phone) {
+      width: 100%;
+      display: block;
+      margin-bottom: 1.6rem;
+    }
+  }
+  &__radio {
+    display: none;
+  }
+  &__radio-label {
+    position: relative;
+    margin-left: 3rem;
+    & span {
+      width: 2.4rem;
+      height: 2.4rem;
+      border: 3px solid $color-primary;
+      border-radius: 50%;
+      display: inline-block;
+      position: absolute;
+      top: 0rem;
+      left: -3rem;
+
+      &::after {
+        content: "";
+        width: 1.2rem;
+        height: 1.2rem;
+        display: inline-block;
+        background-color: $color-primary;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+      }
+    }
+  }
+  &__radio:checked + &__radio-label span::after {
+    opacity: 1;
+  }
+}

@@ -8,9 +8,32 @@
 }
 html {
   font-size: 62.5%; /* == 10px */
+  @include respond(large-desktop) {
+    font-size: 75%; /* == 12px */
+  }
+  @include respond(tablet-landscape) {
+    font-size: 56.25%; /* == 9px */
+  }
+  @include respond(tablet-portrait) {
+    font-size: 50%; /* == 8px */
+  }
+  @include respond(phone) {
+    font-size: 43.75%; /* == 7px */
+  }
 }
 body {
   color: $color-dark;
   box-sizing: border-box;
   padding: 3.6rem;
+
+  @include respond(tablet-landscape) {
+    padding: 0;
+  }
+
+  // For the Navigation positioning
+  position: relative;
+}
+::selection {
+  background-color: $color-primary;
+  color: $color-light;
 }

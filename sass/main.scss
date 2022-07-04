@@ -1,6 +1,6 @@
 /*-=========== All Partials ===========-*/
-@import "abstracts/variables";
 @import "abstracts/mixins";
+@import "abstracts/variables";
 @import "abstracts/functions";
 
 @import "base/base";
@@ -10,8 +10,15 @@
 
 @import "components/buttons";
 @import "components/composition";
+@import "components/feature";
+@import "components/card";
+@import "components/story";
+@import "components/bg-video";
+@import "components/form";
+@import "components/popup";
 
 @import "layout/grid";
+@import "layout/navigation";
 @import "layout/header";
 @import "layout/footer";
 

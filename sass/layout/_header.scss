@@ -7,8 +7,32 @@
       rgba($color-primary, 0.8),
       rgba($color-primary, 0.8)
     ),
-    url(../img/hero.jpg) center center/cover;
+    url(../img/hero-small.jpg) center center/cover;
   clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+
+  // -webkit- for safari
+  @media (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
+    (min-resolution: 192dpi) and (min-width: 37.5em),
+    (min-width: 75em) {
+    background: linear-gradient(
+        to bottom right,
+        rgba($color-primary, 0.8),
+        rgba($color-primary, 0.8)
+      ),
+      url(../img/hero.jpg) center center/cover;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  }
+
+  @include respond(tablet-landscape) {
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+  }
+  @include respond(tablet-portrait) {
+    height: 80vh;
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+  }
+  @include respond(phone) {
+    height: 65vh;
+  }
 
   &__logo-box {
     position: absolute;
